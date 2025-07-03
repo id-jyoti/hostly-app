@@ -4,22 +4,33 @@ import FeatureGrid from '../components/FeatureGrid';
 import QuickBooksEcosystem from '../components/QuickBooksEcosystem';
 import Testimonials from '../components/Testimonials';
 import CTASection from '../components/CTASection';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   return (
-    <div>
-      <HeroSection
-        title="Effortless QuickBooks Hosting"
-        subtitle="Secure. Reliable. Always Accessible."
-        ctaPrimary={{ text: "Get Started", href: "/contact" }}
-        ctaSecondary={{ text: "View Pricing", href: "/pricing" }}
-      />
+    <>
+      <Helmet>
+        <title>Hostly | Secure QuickBooks Hosting</title>
+        <meta
+          name="description"
+          content="Hostly offers secure, scalable, and always-available QuickBooks hosting for businesses of all sizes."
+        />
+      </Helmet>
 
-      <FeatureGrid />
-      <QuickBooksEcosystem />
-      <Testimonials />
-      <CTASection />
-    </div>
+      <div>
+        <HeroSection
+          title="Effortless QuickBooks Hosting"
+          subtitle="Secure. Reliable. Always Accessible."
+          ctaPrimary={{ text: "Get Started", href: "/contact" }}
+          ctaSecondary={{ text: "View Pricing", href: "/pricing" }}
+        />
+
+        <FeatureGrid />
+        <QuickBooksEcosystem />
+        <Testimonials />
+        <CTASection />
+      </div>
+    </>
   );
 };
 
