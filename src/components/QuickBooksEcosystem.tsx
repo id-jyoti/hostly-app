@@ -13,7 +13,7 @@ const QuickBooksEcosystem = () => {
         </p>
 
         <motion.img
-          src="/assets/quickbooks-ecosystem.png" // 👈 Replace with your actual image
+          src="/assets/quickbooks-ecosystem.png" // Replace with your actual image
           alt="QuickBooks Ecosystem"
           className="mx-auto w-full max-w-4xl"
           initial={{ opacity: 0, scale: 0.9 }}
