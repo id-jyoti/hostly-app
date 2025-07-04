@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 bg-white shadow-sm z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
-        {/* ✅ Logo using static path */}
+        {/* Logo using static path */}
         <Link to="/" className="flex items-center space-x-2">
           <img
             src="/src/assets/logo.jpeg"
