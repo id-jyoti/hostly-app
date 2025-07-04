@@ -1,3 +1,5 @@
+// src/data/features.ts
+
 type Feature = {
   id: number;
   icon: string;

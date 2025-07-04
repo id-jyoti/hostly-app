@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-type Props = {
-  icon: string;
-  title: string;
-  description: string;
-};
+import React from 'react';
 
-const IndustryCard = ({ icon, title, description }: Props) => {
+export interface IndustryCardProps {
+  icon: string;
+  name: string;
+  description: string;
+}
+
+const IndustryCard: React.FC<IndustryCardProps> = ({ icon, name, description }) => {
   return (
-    <div className="p-6 bg-white rounded-xl shadow hover:shadow-md transition">
+    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow hover:shadow-md transition duration-200">
       <div className="text-4xl mb-4">{icon}</div>
-      <h3 className="text-xl font-bold text-primary">{title}</h3>
-      <p className="text-sm text-gray-600 mt-2">{description}</p>
+      <h3 className="text-lg font-semibold text-dark mb-2">{name}</h3>
+      <p className="text-sm text-gray-600">{description}</p>
     </div>
   );
 };

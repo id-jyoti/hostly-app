@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Twitter, Linkedin, Globe } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -26,9 +27,9 @@ const Footer = () => {
           <p className="text-sm">Email: support@quickhost.com</p>
           <p className="text-sm">Phone: +1 (123) 456-7890</p>
           <div className="flex space-x-3 mt-2">
-            {/* Replace with icons later */}
-            <a href="#" className="hover:text-primary">LinkedIn</a>
-            <a href="#" className="hover:text-primary">Twitter</a>
+            <a href="#" className="hover:text-primary"><Linkedin className="w-5 h-5" /></a>
+            <a href="#" className="hover:text-primary"><Twitter className="w-5 h-5" /></a>
+            <a href="#" className="hover:text-primary"><Globe className="w-5 h-5" /></a>
           </div>
         </div>
       </div>
