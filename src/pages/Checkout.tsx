@@ -1,15 +1,18 @@
-// src/pages/Checkout.tsx
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const Checkout = () => {
-  const location = useLocation();
-  const plan = location.state?.plan || 'none';
+  const [searchParams] = useSearchParams();
+  const selectedPlan = searchParams.get('plan'); // 'basic' or 'pro'
 
   return (
-    <section className="py-20 px-4 text-center">
-      <h1 className="text-3xl font-bold text-primary mb-4">Checkout</h1>
-      <p className="text-gray-600">You selected the <strong>{plan}</strong> plan.</p>
+    <section className="py-16 px-4 max-w-2xl mx-auto text-center">
+      <h1 className="text-3xl font-bold text-primary mb-6">
+        Checkout — {selectedPlan ? selectedPlan.charAt(0).toUpperCase() + selectedPlan.slice(1) : ''}
+      </h1>
+      <p className="text-gray-700">
+        You selected the <strong>{selectedPlan}</strong> plan.
+      </p>
+      {/* Add form fields or payment integration here */}
     </section>
   );
 };

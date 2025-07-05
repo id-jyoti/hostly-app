@@ -60,8 +60,8 @@ const Pricing = () => {
     if (planId === 'enterprise') {
       navigate('/contact');
     } else {
-      navigate('/checkout', { state: { plan: planId } });
-    }
+      navigate(`/checkout?plan=${planId}`);
+    }    
   };
 
   return (
