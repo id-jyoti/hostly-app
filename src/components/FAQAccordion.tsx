@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
-import faqs from '../data/faqs';
+// src/components/FAQAccordion.tsx
+import React from 'react';
 
-const FAQAccordion = () => {
-  const [active, setActive] = useState<number | null>(null);
+type FAQ = {
+  question: string;
+  answer: string;
+};
 
+interface FAQAccordionProps {
+  faqs: FAQ[];
+}
+
+const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs }) => {
   return (
-    <section>
-      <h2 className="text-2xl font-bold text-primary text-center mb-6">Frequently Asked Questions</h2>
-      <div className="space-y-4 max-w-2xl mx-auto">
-        {faqs.map((faq, idx) => (
-          <div
-            key={idx}
-            className="border rounded-lg p-4 cursor-pointer bg-white"
-            onClick={() => setActive(idx === active ? null : idx)}
-          >
-            <h3 className="font-semibold text-primary">{faq.question}</h3>
-            {active === idx && <p className="text-sm text-gray-600 mt-2">{faq.answer}</p>}
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className="space-y-4">
+      {faqs.map((faq, index) => (
+        <div key={index} className="border border-gray-200 rounded-lg p-4 bg-white shadow-sm">
+          <details>
+            <summary className="font-medium cursor-pointer text-primary">{faq.question}</summary>
+            <p className="text-sm text-gray-600 mt-2">{faq.answer}</p>
+          </details>
+        </div>
+      ))}
+    </div>
   );
 };
 

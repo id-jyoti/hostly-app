@@ -19,6 +19,7 @@ const Header = () => {
     { label: 'How It Works', path: '/how-it-works' },
     { label: 'Industries', path: '/industries' },
     { label: 'Contact', path: '/contact' },
+    { label: 'FAQs', path: '/faq' },
   ];
 
   return (
