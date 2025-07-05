@@ -21,7 +21,7 @@ const Home = () => {
         <HeroSection
           title="Effortless QuickBooks Hosting"
           subtitle="Secure. Reliable. Always Accessible."
-          ctaPrimary={{ text: "Get Started", href: "/contact" }}
+          ctaPrimary={{ text: "Get Started", href: "/signup" }}
           ctaSecondary={{ text: "View Pricing", href: "/pricing" }}
         />
 
