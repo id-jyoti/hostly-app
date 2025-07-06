@@ -1,21 +1,15 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const MainLayout: React.FC<Props> = ({ children }) => {
+const MainLayout: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50"> {/* Light background across entire page */}
+    <div className="flex flex-col min-h-screen">
       <Header />
-
-      {/* Main content area */}
-      <main className="flex-1 px-4 sm:px-6 lg:px-8 py-10">
-        {children}
+      <main className="flex-1 bg-gray-50 px-4 py-8">
+        <Outlet /> {/* This is where page content renders */}
       </main>
-
       <Footer />
     </div>
   );

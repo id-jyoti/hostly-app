@@ -36,7 +36,7 @@ const Header = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-primary focus:outline-none"
+          className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-50-500 hover:text-primary focus:outline-none"
         >
           <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
             {isOpen ? (
@@ -61,12 +61,19 @@ const Header = () => {
                 onMouseEnter={() => setShowDropdown(true)}
                 onMouseLeave={() => setShowDropdown(false)}
               >
-                <button className="flex items-center text-sm font-medium text-white-700 hover:text-primary">
+                <button
+                  className="flex items-center text-sm font-medium text-white-700 hover:text-primary"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setShowDropdown((prev) => !prev);
+                  }}
+                >
                   {item.label}
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
+
                 <div
-                  className={`absolute left-0 mt-2 bg-white border rounded-lg shadow-lg py-2 w-48 z-50 transition-opacity duration-200 ${
+                  className={`absolute left-0 mt-2 bg-white border rounded-lg shadow-lg py-2 w-48 z-50 transition-all duration-200 ${
                     showDropdown ? 'opacity-100 visible' : 'opacity-0 invisible'
                   }`}
                 >
@@ -75,9 +82,12 @@ const Header = () => {
                       key={sub.path}
                       to={sub.path}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
-                      onClick={() => {
-                        setIsOpen(false);
-                        setShowDropdown(false);
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setTimeout(() => {
+                          setIsOpen(false);
+                          setShowDropdown(false);
+                        }, 100); // allow routing first
                       }}
                     >
                       {sub.label}
@@ -94,7 +104,10 @@ const Header = () => {
                     isActive ? 'text-primary' : 'text-gray-700 hover:text-primary'
                   }`
                 }
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setTimeout(() => setIsOpen(false), 150);
+                }}
               >
                 {item.label}
               </NavLink>

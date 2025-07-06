@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // ✅ Add this import
 import features from '../data/features';
 
 const FeatureGrid = () => {
@@ -22,7 +23,9 @@ const FeatureGrid = () => {
             viewport={{ once: true }}
             className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition"
           >
-            <div className="text-4xl mb-4">{feature.icon}</div>
+            <div className="text-primary text-3xl mb-4">
+              <FontAwesomeIcon icon={feature.icon} size="2x" /> {/* ✅ FIXED */}
+            </div>
             <h3 className="text-xl font-semibold text-primary mb-2">{feature.title}</h3>
             <p className="text-gray-600 text-sm">{feature.description}</p>
           </motion.div>

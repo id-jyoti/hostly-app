@@ -1,19 +1,16 @@
 // src/pages/Features.tsx
-
 import React from 'react';
-import features from '../data/features';
-import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import features from '../data/features';
 
 const Features = () => {
   return (
     <>
       <Helmet>
         <title>Features | Hostly</title>
-        <meta
-          name="description"
-          content="Explore all hosting features for secure, scalable QuickBooks access with Hostly."
-        />
+        <meta name="description" content="Explore hosting features with Hostly." />
       </Helmet>
 
       <section className="py-16 px-4 max-w-7xl mx-auto">
@@ -34,7 +31,9 @@ const Features = () => {
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
+              <div className="text-primary text-3xl mb-4">
+                <FontAwesomeIcon icon={feature.icon} />
+              </div>
               <h3 className="text-xl font-bold text-primary">{feature.title}</h3>
               <p className="text-sm text-gray-600 mt-2">{feature.description}</p>
             </motion.div>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { lazy } from 'react';
+import { RouteObject } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 
 const Home = lazy(() => import('../pages/Home'));
@@ -13,17 +13,32 @@ const GetStarted = lazy(() => import('../pages/GetStarted'));
 const Signup = lazy(() => import('../pages/Signup'));
 const Checkout = lazy(() => import('../pages/Checkout'));
 const FAQ = lazy(() => import('../pages/FAQ'));
+const FeatureDesktop = lazy(() => import('../pages/FeatureDesktop'));
+const FeatureEnterprise = lazy(() => import('../pages/FeatureEnterprise'));
 
-export const routes = [
-  { path: '/', element: <Home /> },
-  { path: '/features', element: <Features /> },
-  { path: '/pricing', element: <Pricing /> },
-  { path: '/how-it-works', element: <HowItWorks /> },
-  { path: '/industries', element: <Industries /> },
-  { path: '/contact', element: <Contact /> },
-  { path: '*', element: <NotFound /> },
-  { path: '/get-started', element: <GetStarted /> },
-  { path: '/signup', element: <Signup /> },
-  { path: '/checkout', element: <Checkout /> },
-  { path: '/faq', element: <FAQ /> }
+const routes: RouteObject[] = [
+  {
+    path: '/',
+    element: <MainLayout />, // ✅ Wrap layout here once
+    children: [
+      { index: true, element: <Home /> },
+      { path: 'features', element: <Features /> },
+      { path: 'pricing', element: <Pricing /> },
+      { path: 'how-it-works', element: <HowItWorks /> },
+      { path: 'industries', element: <Industries /> },
+      { path: 'contact', element: <Contact /> },
+      { path: 'get-started', element: <GetStarted /> },
+      { path: 'signup', element: <Signup /> },
+      { path: 'checkout', element: <Checkout /> },
+      { path: 'faq', element: <FAQ /> },
+      { path: 'features/desktop', element: <FeatureDesktop /> },
+      { path: 'features/enterprise', element: <FeatureEnterprise /> },
+    ],
+  },
+  {
+    path: '*',
+    element: <NotFound />,
+  },
 ];
+
+export default routes;
