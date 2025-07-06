@@ -23,8 +23,6 @@
 
 ---
 
----
-
 ## 🛠️ Tech Stack
 
 | Technology              | Purpose                            |
