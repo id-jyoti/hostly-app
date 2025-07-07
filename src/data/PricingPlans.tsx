@@ -1,4 +1,12 @@
-const pricingPlans = [
+export type PricingPlan = {
+  id: string;
+  name: string;
+  price: string;
+  features: string[];
+  highlighted: boolean;
+};
+
+const pricingPlans: PricingPlan[] = [
   {
     id: 'basic',
     name: 'Basic',

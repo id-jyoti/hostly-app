@@ -1,13 +1,33 @@
+// src/components/StepIllustration.tsx
 import React from 'react';
-import { steps } from '../data/steps';
 import { motion } from 'framer-motion';
+
+const steps = [
+  {
+    id: 1,
+    title: 'Choose a Hosting Plan',
+    description: 'Select the plan that best suits your business needs.',
+  },
+  {
+    id: 2,
+    title: 'Setup Your QuickBooks',
+    description: 'We’ll help migrate and set up your QuickBooks environment securely.',
+  },
+  {
+    id: 3,
+    title: 'Access from Anywhere',
+    description: 'Start managing your finances from any device, anywhere.',
+  },
+];
 
 const StepIllustration = () => {
   return (
     <section className="py-16 px-4 bg-white">
       <div className="max-w-5xl mx-auto text-center mb-12">
         <h2 className="text-3xl font-bold text-primary">How It Works</h2>
-        <p className="text-gray-600 mt-2">Just three easy steps to get started with QuickHost</p>
+        <p className="text-gray-600 mt-2">
+          Just three easy steps to get started with QuickHost
+        </p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">

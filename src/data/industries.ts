@@ -1,4 +1,3 @@
-
 import {
   faUserTie,
   faDesktop,
@@ -10,10 +9,11 @@ import {
   faClock,
   faCloud
 } from '@fortawesome/free-solid-svg-icons';
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 export type Industry = {
   id: number;
-  icon: any;
+  icon: IconDefinition;
   title: string;
   description: string;
 };
