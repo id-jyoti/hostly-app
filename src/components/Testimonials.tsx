@@ -30,35 +30,48 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white to-blue-50">
-      <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-4xl font-bold text-primary mb-4">What Our Clients Say</h2>
-        <p className="text-gray-600 text-lg max-w-xl mx-auto">
-          Trusted by accounting professionals and businesses around the world.
-        </p>
+    <section className="py-24 px-4 bg-gradient-to-b from-blue-50 to-white">
+      <div className="max-w-7xl mx-auto text-center mb-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-extrabold text-primary mb-4"
+        >
+          What Our Clients Say
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-gray-600 text-lg max-w-xl mx-auto"
+        >
+          Trusted by professionals and businesses who demand performance and reliability.
+        </motion.p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {testimonials.map((t, i) => (
           <motion.div
             key={t.id}
-            className="bg-white rounded-2xl shadow-md p-6 text-left flex flex-col h-full border border-gray-100 hover:shadow-lg transition"
-            initial={{ opacity: 0, y: 30 }}
+            className="bg-white rounded-2xl p-6 border border-gray-200 shadow hover:shadow-lg transition duration-300 flex flex-col h-full"
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2 }}
+            transition={{ delay: i * 0.2, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <p className="text-gray-700 text-base mb-4 italic leading-relaxed">
+            <p className="text-gray-700 text-base italic leading-relaxed mb-6">
               “{t.feedback}”
             </p>
             <div className="mt-auto flex items-center gap-4">
               <img
                 src={t.avatar}
                 alt={t.name}
-                className="w-12 h-12 rounded-full object-cover"
+                className="w-12 h-12 rounded-full object-cover border border-gray-200"
               />
               <div>
-                <h4 className="text-sm font-semibold text-dark">{t.name}</h4>
+                <h4 className="text-sm font-bold text-dark">{t.name}</h4>
                 <p className="text-xs text-gray-500">{t.role}</p>
               </div>
             </div>
@@ -67,12 +80,18 @@ const Testimonials = () => {
       </div>
 
       {/* Client Logos */}
-      <div className="mt-16 flex flex-wrap justify-center items-center gap-8 opacity-60">
-        <img src="/src/assets/clients/xero.png" alt="Xero" className="h-10 object-contain" />
-        <img src="/src/assets/clients/qbo.png" alt="QuickBooks" className="h-10 object-contain" />
-        <img src="/src/assets/clients/zoho.png" alt="Zoho" className="h-10 object-contain" />
-        <img src="/src/assets/clients/freshbooks.png" alt="FreshBooks" className="h-10 object-contain" />
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mt-20 flex flex-wrap justify-center items-center gap-8 opacity-70"
+      >
+        <img src="/src/assets/clients/xero.png" alt="Xero" className="h-10 object-contain grayscale hover:grayscale-0 transition" />
+        <img src="/src/assets/clients/qbo.png" alt="QuickBooks" className="h-10 object-contain grayscale hover:grayscale-0 transition" />
+        <img src="/src/assets/clients/zoho.png" alt="Zoho" className="h-10 object-contain grayscale hover:grayscale-0 transition" />
+        <img src="/src/assets/clients/freshbooks.png" alt="FreshBooks" className="h-10 object-contain grayscale hover:grayscale-0 transition" />
+      </motion.div>
     </section>
   );
 };
