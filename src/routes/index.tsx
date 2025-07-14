@@ -15,11 +15,12 @@ const Checkout = lazy(() => import('../pages/Checkout'));
 const FAQ = lazy(() => import('../pages/FAQ'));
 const FeatureDesktop = lazy(() => import('../pages/FeatureDesktop'));
 const FeatureEnterprise = lazy(() => import('../pages/FeatureEnterprise'));
+const Login = lazy(() => import('../pages/Login')); // ✅ Login page
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <MainLayout />, // ✅ Wrap layout here once
+    element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
       { path: 'features', element: <Features /> },
@@ -33,6 +34,7 @@ const routes: RouteObject[] = [
       { path: 'faq', element: <FAQ /> },
       { path: 'features/desktop', element: <FeatureDesktop /> },
       { path: 'features/enterprise', element: <FeatureEnterprise /> },
+      { path: 'login', element: <Login /> }, // ✅ Add Login route
     ],
   },
   {

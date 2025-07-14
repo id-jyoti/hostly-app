@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
@@ -21,10 +20,11 @@ const Header = () => {
     { label: 'Industries', path: '/industries' },
     { label: 'Contact', path: '/contact' },
     { label: 'FAQs', path: '/faq' },
+    { label: 'Login', path: '/login' }, // ✅ added login
   ];
 
   return (
-    <header className="sticky top-0 bg-white shadow-md z-50 border-b border-gray-100">
+    <header className="sticky top-0 bg-white/95 backdrop-blur-sm shadow z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
@@ -49,7 +49,7 @@ const Header = () => {
           </svg>
         </button>
 
-        {/* Nav Items */}
+        {/* Nav */}
         <nav
           className={`${
             isOpen ? 'block' : 'hidden'
@@ -64,7 +64,7 @@ const Header = () => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center text-sm font-medium text-white hover:text-primary"
+                  className="flex items-center text-sm font-medium text-white hover:text-primary transition"
                   aria-haspopup="true"
                   aria-expanded={activeDropdown === item.label}
                 >
@@ -73,7 +73,7 @@ const Header = () => {
                 </button>
 
                 <div
-                  className={`absolute left-0 mt-2 bg-white border rounded-lg shadow-md py-2 w-52 z-50 transition-all duration-200 ${
+                  className={`absolute left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 w-56 z-50 transition-all duration-200 ${
                     activeDropdown === item.label ? 'opacity-100 visible' : 'opacity-0 invisible'
                   }`}
                 >
