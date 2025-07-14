@@ -12,7 +12,7 @@ const CTASection = () => {
         viewport={{ once: true }}
         className="max-w-3xl mx-auto"
       >
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        <h2 className="text-4xl md:text-5xl text-white font-extrabold leading-tight mb-6">
           Ready to Get Started?
         </h2>
         <p className="text-lg text-gray-300 mb-8">
