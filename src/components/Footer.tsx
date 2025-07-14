@@ -25,29 +25,29 @@ const Footer = () => {
         <div>
           <h5 className="text-base text-white font-semibold mb-3">Explore</h5>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li><Link to="/features" className="hover:text-white transition">Features</Link></li>
-            <li><Link to="/pricing" className="hover:text-white transition">Pricing</Link></li>
-            <li><Link to="/how-it-works" className="hover:text-white transition">How It Works</Link></li>
-            <li><Link to="/industries" className="hover:text-white transition">Industries</Link></li>
-            <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
+            <li><Link to="/features" className="hover:text-white text-blue-200 transition">Features</Link></li>
+            <li><Link to="/pricing" className="hover:text-white text-blue-200 transition">Pricing</Link></li>
+            <li><Link to="/how-it-works" className="hover:text-white text-blue-200 transition">How It Works</Link></li>
+            <li><Link to="/industries" className="hover:text-white text-blue-200 transition">Industries</Link></li>
+            <li><Link to="/contact" className="hover:text-white text-blue-200 transition">Contact</Link></li>
           </ul>
         </div>
 
         {/* Contact & Social */}
         <div>
           <h5 className="text-base text-white font-semibold mb-3">Get in Touch</h5>
-          <p className="text-sm text-gray-300">
+          <p className="text-sm text-yellow-300">
             Email: <a href="mailto:support@quickhost.com" className="hover:text-white">support@quickhost.com</a>
           </p>
-          <p className="text-sm text-gray-300">Phone: +1 (123) 456-7890</p>
+          <p className="text-sm text-green-100">Phone: +1 (123) 456-7890</p>
           <div className="flex space-x-4 mt-4">
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
+            <a href="#" className="text-green-200 hover:text-white transition" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Twitter">
+            <a href="#" className="text-green-200 hover:text-white transition" aria-label="Twitter">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Website">
+            <a href="#" className="text-green-200 hover:text-white transition" aria-label="Website">
               <Globe className="w-5 h-5" />
             </a>
           </div>
