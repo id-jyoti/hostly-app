@@ -7,58 +7,83 @@ const Checkout = () => {
     <>
       <Helmet>
         <title>Checkout | QuickHost</title>
+        <meta name="description" content="Complete your QuickHost subscription securely." />
       </Helmet>
 
-      <section className="min-h-screen bg-gray-50 py-12 px-4">
-        <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
-          <div className="grid md:grid-cols-2 gap-8 p-8">
-            {/* Billing Section */}
-            <div>
-              <h2 className="text-2xl font-semibold text-primary mb-4">Billing Information</h2>
-              <form className="space-y-4">
-                <input className="w-full p-3 border rounded" placeholder="Full Name" />
-                <input className="w-full p-3 border rounded" placeholder="Email Address" />
-                <input className="w-full p-3 border rounded" placeholder="Company" />
-                <input className="w-full p-3 border rounded" placeholder="Phone" />
-                <input className="w-full p-3 border rounded" placeholder="Address" />
-              </form>
+      <section className="bg-gray-50 py-16 px-4 min-h-screen">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* Left: Billing Info */}
+          <div className="bg-white rounded-xl shadow p-8">
+            <h2 className="text-2xl font-bold text-primary mb-6">Billing Information</h2>
+            <form className="space-y-5">
+              <input
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-blue-200"
+                placeholder="Full Name"
+              />
+              <input
+                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                placeholder="Email Address"
+              />
+              <input
+                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                placeholder="Company"
+              />
+              <input
+                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                placeholder="Phone"
+              />
+              <input
+                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                placeholder="Address"
+              />
+            </form>
+          </div>
+
+          {/* Right: Plan Summary + Payment */}
+          <div className="bg-white rounded-xl shadow p-8 md:sticky md:top-20 h-fit">
+            <h2 className="text-xl font-bold text-primary mb-6">Plan Summary</h2>
+            <div className="text-sm text-gray-700 space-y-4 mb-6">
+              <div className="flex justify-between">
+                <span>Plan:</span>
+                <strong>Pro Hosting</strong>
+              </div>
+              <div className="flex justify-between">
+                <span>Price:</span>
+                <strong>$49/month</strong>
+              </div>
+              <div className="flex justify-between">
+                <span>Users:</span>
+                <strong>5</strong>
+              </div>
+              <div className="flex justify-between">
+                <span>Storage:</span>
+                <strong>25GB</strong>
+              </div>
             </div>
 
-            {/* Plan Summary */}
-            <div className="bg-gray-50 p-6 rounded-xl border">
-              <h2 className="text-xl font-bold text-primary mb-4">Plan Summary</h2>
-              <div className="text-gray-700 text-sm space-y-2">
-                <div className="flex justify-between">
-                  <span>Plan:</span>
-                  <strong>Pro Hosting</strong>
-                </div>
-                <div className="flex justify-between">
-                  <span>Price:</span>
-                  <strong>$49/month</strong>
-                </div>
-                <div className="flex justify-between">
-                  <span>Users:</span>
-                  <strong>5</strong>
-                </div>
-                <div className="flex justify-between">
-                  <span>Storage:</span>
-                  <strong>25GB</strong>
-                </div>
+            <h3 className="text-lg font-semibold text-primary mb-4">Payment Details</h3>
+            <form className="space-y-4">
+              <input
+                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                placeholder="Card Number"
+              />
+              <div className="flex gap-4">
+                <input
+                  className="w-1/2 border border-gray-300 rounded-lg px-4 py-3"
+                  placeholder="MM/YY"
+                />
+                <input
+                  className="w-1/2 border border-gray-300 rounded-lg px-4 py-3"
+                  placeholder="CVV"
+                />
               </div>
-
-              {/* Payment */}
-              <div className="mt-6">
-                <h3 className="text-lg font-semibold mb-3">Payment</h3>
-                <input className="w-full p-3 border rounded mb-3" placeholder="Card Number" />
-                <div className="flex gap-3">
-                  <input className="w-1/2 p-3 border rounded" placeholder="MM/YY" />
-                  <input className="w-1/2 p-3 border rounded" placeholder="CVV" />
-                </div>
-                <button className="mt-5 w-full bg-primary text-white py-3 rounded-xl hover:bg-blue-700 transition">
-                  Complete Checkout
-                </button>
-              </div>
-            </div>
+              <button
+                type="submit"
+                className="w-full mt-4 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-blue-700 transition"
+              >
+                Complete Checkout
+              </button>
+            </form>
           </div>
         </div>
       </section>
