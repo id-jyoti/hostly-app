@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand Info */}
         <div>
-          <h4 className="text-2xl font-bold mb-3">QuickHost</h4>
+          <h4 className="text-2xl text-white font-bold mb-3">QuickHost</h4>
           <p className="text-sm text-gray-300 leading-relaxed">
             Secure and scalable QuickBooks hosting trusted by businesses worldwide. Built for performance and peace of mind.
           </p>
@@ -23,7 +23,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h5 className="text-base font-semibold mb-3">Explore</h5>
+          <h5 className="text-base text-white font-semibold mb-3">Explore</h5>
           <ul className="space-y-2 text-sm text-gray-300">
             <li><Link to="/features" className="hover:text-white transition">Features</Link></li>
             <li><Link to="/pricing" className="hover:text-white transition">Pricing</Link></li>
@@ -35,7 +35,7 @@ const Footer = () => {
 
         {/* Contact & Social */}
         <div>
-          <h5 className="text-base font-semibold mb-3">Get in Touch</h5>
+          <h5 className="text-base text-white font-semibold mb-3">Get in Touch</h5>
           <p className="text-sm text-gray-300">
             Email: <a href="mailto:support@quickhost.com" className="hover:text-white">support@quickhost.com</a>
           </p>
