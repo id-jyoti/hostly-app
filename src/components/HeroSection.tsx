@@ -1,36 +1,58 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import heroImage from "../assets/hero-desktop.png";
 
-type Props = {
+// ✅ Proper TypeScript props definition
+type HeroSectionProps = {
   title: string;
-  subtitle: string;
-  ctaPrimary: { text: string; href: string };
-  ctaSecondary?: { text: string; href: string };
+  subtitle?: string;
+  ctaPrimary: {
+    text: string;
+    href: string;
+  };
+  ctaSecondary?: {
+    text: string;
+    href: string;
+  };
 };
 
-const HeroSection = ({ title, subtitle, ctaPrimary, ctaSecondary }: Props) => {
+const HeroSection: React.FC<HeroSectionProps> = ({
+  title,
+  subtitle,
+  ctaPrimary,
+  ctaSecondary,
+}) => {
   return (
-    <section className="relative overflow-hidden min-h-[80vh] flex items-center justify-center bg-gradient-to-tr from-blue-100 via-white to-blue-200 px-4">
-      {/* Optional Background Animation */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-100/40 via-white to-blue-200 pointer-events-none z-0" />
+    <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+      {/* Decorative Image */}
+      <div className="absolute inset-0 opacity-20 z-0">
+        <img
+          src={heroImage}
+          alt="Hero"
+          className="w-full h-full object-cover object-center mix-blend-overlay"
+        />
+      </div>
 
-      {/* Central Card */}
+      {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="relative z-10 max-w-3xl text-center backdrop-blur-lg bg-white/60 border border-blue-200 rounded-2xl p-10 shadow-xl"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 drop-shadow-sm mb-4 leading-tight">
-          {title}
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-blue-100 drop-shadow-md">
+          Effortless <span className="text-yellow-300">QuickBooks Hosting</span>
         </h1>
-        <p className="text-lg text-gray-700 mb-8">{subtitle}</p>
+        <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
+          {subtitle ||
+            "Experience secure, fast, and reliable hosting with 24/7 support and seamless access from anywhere."}
+        </p>
 
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             to={ctaPrimary.href}
-            className="px-6 py-3 bg-primary text-white rounded-xl hover:bg-blue-700 transition font-semibold shadow"
+            className="px-6 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-xl hover:bg-yellow-300 transition shadow"
           >
             {ctaPrimary.text}
           </Link>
@@ -38,7 +60,7 @@ const HeroSection = ({ title, subtitle, ctaPrimary, ctaSecondary }: Props) => {
           {ctaSecondary && (
             <Link
               to={ctaSecondary.href}
-              className="px-6 py-3 border border-primary text-primary rounded-xl hover:bg-primary hover:text-white transition font-medium"
+              className="px-6 py-3 border border-yellow-400 text-yellow-300 rounded-xl hover:bg-yellow-400 hover:text-blue-900 transition font-medium"
             >
               {ctaSecondary.text}
             </Link>
