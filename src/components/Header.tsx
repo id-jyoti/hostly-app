@@ -1,3 +1,4 @@
+// src/components/Header.tsx
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
@@ -20,25 +21,21 @@ const Header = () => {
     { label: 'Industries', path: '/industries' },
     { label: 'Contact', path: '/contact' },
     { label: 'FAQs', path: '/faq' },
-    { label: 'Login', path: '/login' }, // ✅ added login
+    { label: 'Login', path: '/login' },
   ];
 
   return (
-    <header className="sticky top-0 bg-white/95 backdrop-blur-sm shadow z-50 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
-          <img
-            src="/src/assets/logo.jpeg"
-            alt="Logo"
-            className="h-10 w-auto object-contain"
-          />
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        {/* Logo only — no brand text */}
+        <Link to="/" className="flex items-center">
+          <img src="/src/assets/logo.jpeg" alt="Logo" className="h-10 w-auto object-contain" />
         </Link>
 
-        {/* Mobile Toggle */}
+        {/* Mobile toggle button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="sm:hidden p-2 text-gray-600 hover:text-primary focus:outline-none"
+          className="sm:hidden text-green-200 hover:text-primary"
         >
           <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isOpen ? (
@@ -49,11 +46,11 @@ const Header = () => {
           </svg>
         </button>
 
-        {/* Nav */}
+        {/* Navigation */}
         <nav
           className={`${
             isOpen ? 'block' : 'hidden'
-          } sm:flex sm:items-center sm:space-x-6 absolute sm:static bg-white left-0 right-0 top-full sm:top-auto z-40 sm:z-auto px-6 sm:px-0 pb-6 sm:pb-0`}
+          } sm:flex sm:items-center sm:gap-6 absolute sm:static left-0 right-0 top-full sm:top-auto bg-white sm:bg-transparent px-6 sm:px-0 py-4 sm:py-0 shadow sm:shadow-none`}
         >
           {navItems.map((item) =>
             item.dropdown ? (
@@ -64,7 +61,7 @@ const Header = () => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center text-sm font-medium text-white hover:text-primary transition"
+                  className="flex items-center text-sm font-medium text-blue-200 hover:text-primary transition"
                   aria-haspopup="true"
                   aria-expanded={activeDropdown === item.label}
                 >
@@ -72,8 +69,9 @@ const Header = () => {
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
 
+                {/* Dropdown */}
                 <div
-                  className={`absolute left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 w-56 z-50 transition-all duration-200 ${
+                  className={`absolute left-0 mt-2 w-60 bg-white border border-gray-200 rounded-lg shadow-lg py-2 transition-all duration-200 ${
                     activeDropdown === item.label ? 'opacity-100 visible' : 'opacity-0 invisible'
                   }`}
                 >
@@ -98,7 +96,7 @@ const Header = () => {
                 to={item.path}
                 className={({ isActive }) =>
                   `block px-3 py-2 text-sm font-medium transition ${
-                    isActive ? 'text-primary' : 'text-gray-700 hover:text-primary'
+                    isActive ? 'text-primary font-semibold' : 'text-gray-700 hover:text-primary'
                   }`
                 }
                 onClick={() => setIsOpen(false)}
@@ -107,6 +105,14 @@ const Header = () => {
               </NavLink>
             )
           )}
+
+          {/* CTA */}
+          <Link
+            to="/get-started"
+            className="mt-4 sm:mt-0 sm:ml-4 inline-block px-4 py-2 bg-primary text-white rounded-md text-sm font-semibold hover:bg-blue-700 transition"
+          >
+            Get Started
+          </Link>
         </nav>
       </div>
     </header>
