@@ -24,7 +24,7 @@ const QuickBooksEcosystem = () => {
           </p>
 
           <motion.img
-            src="/assets/quickbooks-ecosystem.png"
+            src="/assets/quickbooks.png"
             alt="QuickBooks Ecosystem"
             className="mx-auto w-full max-w-4xl"
             initial={{ opacity: 0, scale: 0.9 }}
