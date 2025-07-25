@@ -14,7 +14,7 @@ const QuickBooksEcosystem = () => {
         />
       </Helmet>
 
-      <section className="py-20 px-4 bg-gray-50">
+      <div className="px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
             Connected QuickBooks Ecosystem
@@ -33,7 +33,7 @@ const QuickBooksEcosystem = () => {
             viewport={{ once: true }}
           />
         </div>
-      </section>
+      </div>
     </>
   );
 };
