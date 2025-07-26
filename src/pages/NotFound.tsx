@@ -1,29 +1,51 @@
-import React, { useState } from 'react';
-import IndustryCard from '../components/IndustryCard';
-import industries from '../data/industries';
+// src/pages/NotFound.tsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
 
-const Industries = () => {
+const NotFound = () => {
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-primary">Industries We Serve</h1>
-        <p className="mt-4 text-gray-600 max-w-xl mx-auto">
-          Tailored hosting for the industries that rely on QuickBooks most.
-        </p>
-      </div>
+    <>
+      <Helmet>
+        <title>Page Not Found | QuickHost</title>
+        <meta name="description" content="Oops! The page you're looking for does not exist." />
+      </Helmet>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-        {industries.map((ind) => (
-          <IndustryCard
-            key={ind.id}
-            icon={ind.icon}
-            title={ind.title}
-            description={ind.description}
-          />
-        ))}
-      </div>
-    </section>
+      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 bg-white">
+        <motion.h1
+          className="text-6xl font-extrabold text-primary mb-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          404
+        </motion.h1>
+
+        <motion.p
+          className="text-lg text-gray-600 mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          Oops! The page you're looking for doesn’t exist or has been moved.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          <Link
+            to="/"
+            className="inline-block px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+          >
+            Go to Homepage
+          </Link>
+        </motion.div>
+      </section>
+    </>
   );
 };
 
-export default Industries;
+export default NotFound;

@@ -1,7 +1,7 @@
 // src/pages/Signup.tsx
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -18,7 +18,10 @@ const Signup = () => {
     <>
       <Helmet>
         <title>Sign Up | Hostly</title>
-        <meta name="description" content="Create your Hostly account and get started with QuickBooks hosting." />
+        <meta
+          name="description"
+          content="Create your Hostly account and get started with QuickBooks hosting."
+        />
       </Helmet>
 
       <section className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-16">
@@ -26,35 +29,57 @@ const Signup = () => {
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-primary">Create Your Hostly Account</h1>
             <p className="text-gray-600 mt-2">
-              Signing up for: <span className="font-semibold text-dark">{selectedPlan}</span>
+              Signing up for:{" "}
+              <span className="font-semibold text-dark">{selectedPlan}</span>
             </p>
           </div>
 
           <form className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Full Name
+              </label>
               <input
                 type="text"
                 placeholder="Your name"
                 className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
+                required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Email Address
+              </label>
               <input
                 type="email"
                 placeholder="you@example.com"
                 className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
+                required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Password
+              </label>
               <input
                 type="password"
                 placeholder="••••••••"
                 className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                placeholder="••••••••"
+                className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
+                required
               />
             </div>
 
@@ -68,7 +93,7 @@ const Signup = () => {
           </form>
 
           <p className="text-sm text-gray-500 text-center mt-6">
-            Already have an account?{' '}
+            Already have an account?{" "}
             <a
               href="https://accounts.rightworks.com/login/#/?redirect_uri=https:%2F%2Fapps.rightworks.com%2F%23%2F"
               target="_blank"

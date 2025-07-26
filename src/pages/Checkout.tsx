@@ -17,24 +17,36 @@ const Checkout = () => {
             <h2 className="text-2xl font-bold text-primary mb-6">Billing Information</h2>
             <form className="space-y-5">
               <input
+                type="text"
+                name="name"
+                required
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-blue-200"
                 placeholder="Full Name"
               />
               <input
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                type="email"
+                name="email"
+                required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-blue-200"
                 placeholder="Email Address"
               />
               <input
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-                placeholder="Company"
+                type="text"
+                name="company"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-blue-200"
+                placeholder="Company (Optional)"
               />
               <input
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                type="tel"
+                name="phone"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-blue-200"
                 placeholder="Phone"
               />
               <input
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-                placeholder="Address"
+                type="text"
+                name="address"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-blue-200"
+                placeholder="Billing Address"
               />
             </form>
           </div>
@@ -64,17 +76,29 @@ const Checkout = () => {
             <h3 className="text-lg font-semibold text-primary mb-4">Payment Details</h3>
             <form className="space-y-4">
               <input
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                type="text"
+                name="card"
+                inputMode="numeric"
+                pattern="[0-9\s]{13,19}"
+                maxLength={19}
                 placeholder="Card Number"
+                required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-blue-200"
               />
               <div className="flex gap-4">
                 <input
-                  className="w-1/2 border border-gray-300 rounded-lg px-4 py-3"
+                  type="text"
+                  name="expiry"
                   placeholder="MM/YY"
+                  required
+                  className="w-1/2 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-blue-200"
                 />
                 <input
-                  className="w-1/2 border border-gray-300 rounded-lg px-4 py-3"
+                  type="text"
+                  name="cvv"
                   placeholder="CVV"
+                  required
+                  className="w-1/2 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-blue-200"
                 />
               </div>
               <button

@@ -82,36 +82,6 @@ const Testimonials = () => {
           </motion.div>
         ))}
       </div>
-
-      {/* Client Logos */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        viewport={{ once: true }}
-        className="mt-20 flex flex-wrap justify-center items-center gap-10 opacity-90"
-      >
-        <img
-          src="/src/assets/clients/xero.svg"
-          alt="Xero"
-          className="h-12 grayscale hover:grayscale-0 transition-all duration-300"
-        />
-        <img
-          src="/src/assets/clients/qbo.jpg"
-          alt="QuickBooks"
-          className="h-12 grayscale hover:grayscale-0 transition-all duration-300"
-        />
-        <img
-          src="/src/assets/clients/zoho.png"
-          alt="Zoho"
-          className="h-12 grayscale hover:grayscale-0 transition-all duration-300"
-        />
-        <img
-          src="/src/assets/clients/fbo.png"
-          alt="FreshBooks"
-          className="h-12 grayscale hover:grayscale-0 transition-all duration-300"
-        />
-      </motion.div>
     </section>
   );
 };

@@ -1,4 +1,3 @@
-// src/pages/HowItWorks.tsx
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +7,7 @@ import {
   faUserShield,
   faChartLine,
 } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 
 const steps = [
   {
@@ -43,22 +43,44 @@ const HowItWorks = () => {
         />
       </Helmet>
 
-      <section className="py-16 px-4 max-w-6xl mx-auto text-center">
-        <h1 className="text-4xl font-bold text-primary mb-4">How It Works</h1>
-        <p className="text-gray-700 mb-10 max-w-2xl mx-auto">
-          A simple 4-step process to get your QuickBooks hosted securely in the cloud.
-        </p>
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 via-white to-gray-100">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <motion.h1
+            className="text-4xl md:text-5xl font-extrabold text-primary mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            How It Works
+          </motion.h1>
+          <motion.p
+            className="text-gray-700 max-w-2xl mx-auto text-lg"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            A simple 4-step process to get your QuickBooks hosted securely in the cloud.
+          </motion.p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {steps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white border rounded-xl p-6 shadow hover:shadow-md transition"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.2 }}
+              viewport={{ once: true }}
             >
-              <FontAwesomeIcon icon={step.icon} className="text-4xl text-primary mb-4" />
-              <h3 className="text-lg font-semibold text-dark mb-2">{step.title}</h3>
+              <div className="text-4xl text-blue-600 mb-4">
+                <FontAwesomeIcon icon={step.icon} />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
               <p className="text-sm text-gray-600">{step.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
