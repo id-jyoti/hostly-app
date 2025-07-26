@@ -21,7 +21,7 @@ const QuickBooksEcosystem = () => {
         />
       </Helmet>
 
-      <section className="px-4 py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      <section className="px-4 pt-12 pb-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h2
             className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4"
@@ -42,7 +42,6 @@ const QuickBooksEcosystem = () => {
             Easily integrate QuickBooks with the apps and tools your business relies on — from accounting to CRM and beyond.
           </motion.p>
 
-          {/* Ecosystem Image */}
           <motion.img
             src="/assets/quickbooks.png"
             alt="QuickBooks Ecosystem"
@@ -53,7 +52,6 @@ const QuickBooksEcosystem = () => {
             viewport={{ once: true }}
           />
 
-          {/* Integration Logos */}
           <motion.div
             className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-center"
             initial={{ opacity: 0, y: 30 }}

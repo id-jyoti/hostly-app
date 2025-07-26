@@ -1,5 +1,6 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
 type FAQ = {
   question: string;
@@ -18,21 +19,30 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs }) => {
   };
 
   return (
-    <div className="space-y-4 max-w-4xl mx-auto">
+    <div className="space-y-5 max-w-4xl mx-auto">
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
 
         return (
           <div
             key={index}
-            className="border border-gray-700 rounded-xl bg-[#1c1f26] shadow-sm overflow-hidden transition-all"
+            className="border border-gray-700 rounded-xl bg-[#1c1f26] shadow hover:shadow-md transition-all"
           >
             <button
               onClick={() => toggle(index)}
-              className="w-full text-left px-5 py-4 flex justify-between items-center focus:outline-none"
+              className="w-full flex justify-between items-center px-6 py-5 text-left group focus:outline-none"
             >
-              <span className="font-medium text-white">{faq.question}</span>
-              <span className="text-xl text-gray-400">{isOpen ? '−' : '+'}</span>
+              <span className="font-semibold text-white text-base md:text-lg">
+                {faq.question}
+              </span>
+
+              <motion.span
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="text-gray-400 group-hover:text-yellow-400"
+              >
+                <ChevronDown className="w-5 h-5" />
+              </motion.span>
             </button>
 
             <AnimatePresence initial={false}>
@@ -43,8 +53,9 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs }) => {
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
                 >
-                  <div className="px-5 pb-5 text-sm text-gray-300">
+                  <div className="px-6 pb-6 text-sm text-gray-300 leading-relaxed">
                     {faq.answer}
                   </div>
                 </motion.div>

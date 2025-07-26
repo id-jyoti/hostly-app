@@ -1,3 +1,4 @@
+// src/components/FeatureGrid.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -5,7 +6,7 @@ import features from '../data/features';
 
 const FeatureGrid = () => {
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="pt-24 pb-12 px-4 bg-white">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <motion.h2
           className="text-4xl md:text-5xl font-extrabold text-blue-900"
@@ -37,17 +38,12 @@ const FeatureGrid = () => {
             viewport={{ once: true }}
             className="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col items-start"
           >
-            {/* Icon */}
             <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 text-xl mb-4">
               <FontAwesomeIcon icon={feature.icon} />
             </div>
-
-            {/* Title */}
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               {feature.title}
             </h3>
-
-            {/* Description */}
             <p className="text-sm text-gray-600 leading-relaxed">
               {feature.description}
             </p>

@@ -1,4 +1,3 @@
-// src/components/StepIllustration.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -22,27 +21,41 @@ const steps = [
 
 const StepIllustration = () => {
   return (
-    <section className="py-16 px-4 bg-white">
-      <div className="max-w-5xl mx-auto text-center mb-12">
-        <h2 className="text-3xl font-bold text-primary">How It Works</h2>
-        <p className="text-gray-600 mt-2">
-          Just three easy steps to get started with QuickHost
-        </p>
+    <section className="py-24 px-4 bg-gradient-to-br from-white via-gray-50 to-blue-50">
+      <div className="max-w-5xl mx-auto text-center mb-16">
+        <motion.h2
+          className="text-4xl md:text-5xl font-extrabold text-blue-900"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          How It Works
+        </motion.h2>
+        <motion.p
+          className="text-gray-600 text-lg mt-3 max-w-xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          Just three easy steps to get started with QuickHost.
+        </motion.p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {steps.map((step, index) => (
           <motion.div
             key={step.id}
-            className="bg-light border border-gray-200 p-6 rounded-xl shadow-sm"
+            className="bg-white border border-gray-200 p-8 rounded-2xl shadow-md hover:shadow-lg transition"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2 }}
+            transition={{ delay: index * 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="text-primary font-bold text-4xl mb-4">{`0${step.id}`}</div>
-            <h3 className="text-xl font-semibold text-dark mb-2">{step.title}</h3>
-            <p className="text-sm text-gray-600">{step.description}</p>
+            <div className="text-primary font-extrabold text-4xl mb-4">{`0${step.id}`}</div>
+            <h3 className="text-xl font-bold text-gray-800 mb-2">{step.title}</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
           </motion.div>
         ))}
       </div>

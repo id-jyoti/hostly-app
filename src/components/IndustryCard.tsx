@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { motion } from 'framer-motion';
 
 type IndustryCardProps = {
   icon: IconDefinition;
@@ -10,13 +11,19 @@ type IndustryCardProps = {
 
 const IndustryCard: React.FC<IndustryCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow hover:shadow-md transition duration-200 text-center">
-      <div className="text-4xl text-primary mb-4">
+    <motion.div
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      transition={{ duration: 0.4 }}
+      viewport={{ once: true }}
+      className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-xl transition duration-300 text-center"
+    >
+      <div className="text-4xl text-blue-600 mb-4">
         <FontAwesomeIcon icon={icon} />
       </div>
-      <h3 className="text-lg font-semibold text-dark mb-2">{title}</h3>
-      <p className="text-sm text-gray-600">{description}</p>
-    </div>
+      <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
+      <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+    </motion.div>
   );
 };
 
