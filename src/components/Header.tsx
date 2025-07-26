@@ -21,21 +21,20 @@ const Header = () => {
     { label: 'Industries', path: '/industries' },
     { label: 'Contact', path: '/contact' },
     { label: 'FAQs', path: '/faq' },
-    { label: 'Login', path: '/login' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        {/* Logo only — no brand text */}
+        {/* Logo */}
         <Link to="/" className="flex items-center">
           <img src="/src/assets/logo.jpeg" alt="Logo" className="h-10 w-auto object-contain" />
         </Link>
 
-        {/* Mobile toggle button */}
+        {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="sm:hidden text-green-200 hover:text-primary"
+          className="sm:hidden text-gray-700 hover:text-primary focus:outline-none"
         >
           <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isOpen ? (
@@ -50,7 +49,7 @@ const Header = () => {
         <nav
           className={`${
             isOpen ? 'block' : 'hidden'
-          } sm:flex sm:items-center sm:gap-6 absolute sm:static left-0 right-0 top-full sm:top-auto bg-white sm:bg-transparent px-6 sm:px-0 py-4 sm:py-0 shadow sm:shadow-none`}
+          } sm:flex sm:items-center sm:gap-6 absolute sm:static bg-white sm:bg-transparent left-0 right-0 top-full sm:top-auto px-6 sm:px-0 py-4 sm:py-0 shadow sm:shadow-none`}
         >
           {navItems.map((item) =>
             item.dropdown ? (
@@ -61,7 +60,7 @@ const Header = () => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center text-sm font-medium text-blue-200 hover:text-primary transition"
+                  className="flex items-center text-sm font-medium text-pink-100 hover:text-primary transition"
                   aria-haspopup="true"
                   aria-expanded={activeDropdown === item.label}
                 >
@@ -79,7 +78,7 @@ const Header = () => {
                     <NavLink
                       key={sub.path}
                       to={sub.path}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 hover:text-primary"
                       onClick={() => {
                         setIsOpen(false);
                         setActiveDropdown(null);
@@ -106,13 +105,21 @@ const Header = () => {
             )
           )}
 
-          {/* CTA */}
-          <Link
-            to="/get-started"
-            className="mt-4 sm:mt-0 sm:ml-4 inline-block px-4 py-2 bg-primary text-white rounded-md text-sm font-semibold hover:bg-blue-700 transition"
-          >
-            Get Started
-          </Link>
+          {/* Right CTA Links */}
+          <div className="mt-4 sm:mt-0 sm:ml-6 flex items-center gap-3">
+            <Link
+              to="/login"
+              className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-100 transition"
+            >
+              Login
+            </Link>
+            <Link
+              to="/get-started"
+              className="px-4 py-2 text-sm font-semibold bg-primary text-white rounded-md hover:bg-blue-700 transition"
+            >
+              Get Started
+            </Link>
+          </div>
         </nav>
       </div>
     </header>

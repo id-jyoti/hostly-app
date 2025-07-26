@@ -10,69 +10,71 @@ const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-[#12151b] text-white pt-16 pb-8 mt-24"
+      className="bg-[#0f1117] text-white pt-20 pb-10 mt-32"
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
         {/* Brand Info */}
         <div>
-          <h4 className="text-2xl font-bold text-white mb-3">QuickHost</h4>
+          <h4 className="text-2xl font-bold mb-4 text-white">QuickHost</h4>
           <p className="text-sm text-gray-400 leading-relaxed">
-            Secure and scalable QuickBooks hosting trusted by professionals. Designed for performance and peace of mind.
+            Secure and scalable QuickBooks hosting trusted by professionals. Built for reliability, access, and growth.
           </p>
         </div>
 
         {/* Navigation */}
         <div>
-          <h5 className="text-base font-semibold text-white mb-3">Explore</h5>
+          <h5 className="text-base font-semibold text-white mb-4">Explore</h5>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/features" className="text-gray-400 hover:text-white">Features</Link></li>
-            <li><Link to="/pricing" className="text-gray-400 hover:text-white">Pricing</Link></li>
-            <li><Link to="/how-it-works" className="text-gray-400 hover:text-white">How It Works</Link></li>
-            <li><Link to="/industries" className="text-gray-400 hover:text-white">Industries</Link></li>
-            <li><Link to="/contact" className="text-gray-400 hover:text-white">Contact</Link></li>
+            <li><Link to="/features" className="text-gray-400 hover:text-white transition">Features</Link></li>
+            <li><Link to="/pricing" className="text-gray-400 hover:text-white transition">Pricing</Link></li>
+            <li><Link to="/how-it-works" className="text-gray-400 hover:text-white transition">How It Works</Link></li>
+            <li><Link to="/industries" className="text-gray-400 hover:text-white transition">Industries</Link></li>
+            <li><Link to="/contact" className="text-gray-400 hover:text-white transition">Contact</Link></li>
           </ul>
         </div>
 
         {/* Contact Info */}
         <div>
-          <h5 className="text-base font-semibold text-white mb-3">Contact</h5>
+          <h5 className="text-base font-semibold text-white mb-4">Contact Us</h5>
           <p className="text-sm text-gray-400 mb-2">
             Email: <a href="mailto:support@quickhost.com" className="text-blue-300 hover:text-white">support@quickhost.com</a>
           </p>
           <p className="text-sm text-gray-400">Phone: +1 (123) 456-7890</p>
         </div>
 
-        {/* Social & Newsletter */}
+        {/* Social + Newsletter */}
         <div>
-          <h5 className="text-base font-semibold text-white mb-3">Connect</h5>
-          <div className="flex items-center space-x-4 mb-4">
-            <a href="#" className="text-gray-400 hover:text-white" aria-label="LinkedIn">
+          <h5 className="text-base font-semibold text-white mb-4">Stay Connected</h5>
+          <div className="flex items-center space-x-4 mb-6">
+            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white" aria-label="Twitter">
+            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Twitter">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white" aria-label="Website">
+            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Website">
               <Globe className="w-5 h-5" />
             </a>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <p className="text-sm text-gray-400 mb-2">Subscribe for updates</p>
+          <p className="text-sm text-gray-400 mb-2">Subscribe for product news & insights</p>
+          <form className="flex flex-col gap-2">
             <input
               type="email"
-              placeholder="Your email"
-              className="w-full px-3 py-2 mb-2 rounded bg-gray-800 text-white placeholder-gray-500 focus:outline-none"
+              placeholder="you@example.com"
+              className="w-full px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-500 border border-gray-600 focus:outline-none focus:ring focus:ring-blue-500"
             />
-            <button className="w-full bg-primary text-white py-2 rounded hover:bg-blue-700 transition">
+            <button
+              type="submit"
+              className="bg-yellow-400 text-blue-900 font-semibold py-2 px-4 rounded hover:bg-yellow-300 transition"
+            >
               Subscribe
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* Bottom Bar */}
       <div className="mt-12 text-center text-xs text-gray-500 border-t border-gray-800 pt-6">
         &copy; {new Date().getFullYear()} QuickHost. All rights reserved.
       </div>
