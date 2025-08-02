@@ -13,8 +13,9 @@ const CTASection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="relative z-10 max-w-3xl mx-auto text-center"
-      >
+        className="relative z-10 max-w-3xl mx-auto text-center will-change-transform"
+        >
+
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-white">
           <span className="text-yellow-300">Ready</span> to Elevate Your QuickBooks Experience?
         </h2>

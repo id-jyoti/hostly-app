@@ -6,7 +6,7 @@ import features from '../data/features';
 
 const FeatureGrid = () => {
   return (
-    <section className="pt-24 pb-12 px-4 bg-white">
+    <section className="pt-28 pb-16 px-4 bg-white">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <motion.h2
           className="text-4xl md:text-5xl font-extrabold text-blue-900"
@@ -30,14 +30,14 @@ const FeatureGrid = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {features.map((feature, index) => (
-          <motion.div
-            key={feature.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            viewport={{ once: true }}
-            className="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col items-start"
-          >
+         <motion.div
+           key={feature.id}
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ delay: index * 0.1, duration: 0.5 }}
+           viewport={{ once: true }}
+           className="bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col items-start will-change-transform"
+         >
             <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 text-xl mb-4">
               <FontAwesomeIcon icon={feature.icon} />
             </div>

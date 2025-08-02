@@ -10,7 +10,6 @@ const Header = () => {
   const navItems = [
     {
       label: 'Features',
-      path: '/features',
       dropdown: [
         { label: 'QuickBooks Desktop', path: '/features/desktop' },
         { label: 'QuickBooks Enterprise', path: '/features/enterprise' },
@@ -24,9 +23,8 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        {/* Logo */}
         <Link to="/" className="flex items-center">
           <img src="/src/assets/logo.jpeg" alt="Logo" className="h-10 w-auto object-contain" />
         </Link>
@@ -34,7 +32,7 @@ const Header = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="sm:hidden text-gray-700 hover:text-primary focus:outline-none"
+          className="sm:hidden text-gray-700 hover:text-primary"
         >
           <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isOpen ? (
@@ -60,7 +58,7 @@ const Header = () => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center text-sm font-medium text-pink-100 hover:text-primary transition"
+                  className="flex items-center text-sm font-medium text-gray-700 hover:text-primary transition"
                   aria-haspopup="true"
                   aria-expanded={activeDropdown === item.label}
                 >
@@ -70,7 +68,7 @@ const Header = () => {
 
                 {/* Dropdown */}
                 <div
-                  className={`absolute left-0 mt-2 w-60 bg-white border border-gray-200 rounded-lg shadow-lg py-2 transition-all duration-200 ${
+                  className={`absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 transition-all duration-200 ${
                     activeDropdown === item.label ? 'opacity-100 visible' : 'opacity-0 invisible'
                   }`}
                 >
@@ -105,11 +103,11 @@ const Header = () => {
             )
           )}
 
-          {/* Right CTA Links */}
+          {/* CTA Links */}
           <div className="mt-4 sm:mt-0 sm:ml-6 flex items-center gap-3">
             <Link
               to="/login"
-              className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-100 transition"
+              className="px-4 py-2 text-sm text-gray-700 border border-gray-300 rounded-md hover:bg-gray-100 transition"
             >
               Login
             </Link>

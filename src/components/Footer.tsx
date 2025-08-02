@@ -1,3 +1,4 @@
+// src/components/Footer.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Globe } from 'lucide-react';
@@ -25,11 +26,12 @@ const Footer = () => {
         <div>
           <h5 className="text-base font-semibold text-white mb-4">Explore</h5>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/features" className="text-gray-400 hover:text-white transition">Features</Link></li>
-            <li><Link to="/pricing" className="text-gray-400 hover:text-white transition">Pricing</Link></li>
-            <li><Link to="/how-it-works" className="text-gray-400 hover:text-white transition">How It Works</Link></li>
-            <li><Link to="/industries" className="text-gray-400 hover:text-white transition">Industries</Link></li>
-            <li><Link to="/contact" className="text-gray-400 hover:text-white transition">Contact</Link></li>
+            <li><Link to="/features" className="text-gray-400 hover:text-white transition-colors">Features</Link></li>
+            <li><Link to="/pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</Link></li>
+            <li><Link to="/how-it-works" className="text-gray-400 hover:text-white transition-colors">How It Works</Link></li>
+            <li><Link to="/industries" className="text-gray-400 hover:text-white transition-colors">Industries</Link></li>
+            <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
+            <li><Link to="/faq" className="text-gray-400 hover:text-white transition-colors">FAQs</Link></li>
           </ul>
         </div>
 
@@ -45,14 +47,14 @@ const Footer = () => {
         {/* Social + Newsletter */}
         <div>
           <h5 className="text-base font-semibold text-white mb-4">Stay Connected</h5>
-          <div className="flex items-center space-x-4 mb-6">
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
+          <div className="flex items-center space-x-4 mb-5">
+            <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Twitter">
+            <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Website">
+            <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Website">
               <Globe className="w-5 h-5" />
             </a>
           </div>
@@ -62,7 +64,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="you@example.com"
-              className="w-full px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-500 border border-gray-600 focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-500 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <button
               type="submit"
@@ -75,7 +77,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-12 text-center text-xs text-gray-500 border-t border-gray-800 pt-6">
+      <div className="mt-12 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
         &copy; {new Date().getFullYear()} QuickHost. All rights reserved.
       </div>
     </motion.footer>

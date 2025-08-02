@@ -1,6 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -15,5 +14,15 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.will-change-transform': {
+          willChange: 'transform, opacity',
+          backfaceVisibility: 'hidden',
+          transformStyle: 'preserve-3d',
+        },
+      });
+    },
+  ],
 };

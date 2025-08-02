@@ -6,9 +6,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.will-change-transform {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
 /* Custom Base Styles using Tailwind utilities */
 body {
-  @apply font-sans text-gray-800 bg-white leading-relaxed antialiased;
+  @apply font-serif text-gray-800 bg-white leading-relaxed antialiased;
 }
 
 /* Typography */
@@ -17,9 +23,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  @apply text-primary hover:underline font-medium transition-colors duration-200;
+  @apply text-white hover:underline font-medium transition-colors duration-200;
 }
 
-button {
+.btn-primary {
   @apply px-4 py-2 rounded-md bg-primary text-white font-medium hover:bg-blue-700 transition;
 }
