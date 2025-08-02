@@ -31,8 +31,8 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-blue-50 py-24 px-4">
-      <div className="max-w-7xl mx-auto text-center mb-16">
+    <section className="bg-blue-50 py-16 px-4">
+      <div className="max-w-7xl mx-auto text-center mb-5">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

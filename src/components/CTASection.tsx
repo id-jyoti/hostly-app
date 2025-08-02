@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const CTASection = () => {
   return (
-    <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-24 px-6 overflow-hidden">
+    <section className="relative bg-gradient-to-r from-blue-400 via-blue-950 to bg-gray-800 text-white py-24 px-6 overflow-hidden">
       {/* Background SVG Pattern (optional) */}
       <div className="absolute inset-0 opacity-10 z-0 bg-[url('/assets/bg-pattern.svg')] bg-cover bg-center" />
 

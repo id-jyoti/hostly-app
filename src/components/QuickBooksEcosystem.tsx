@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const QuickBooksEcosystem = () => {
   const integrations = [
-    { name: "Xero", logo: "/src/assets/clients/xero.svg" },
-    { name: "FreshBooks", logo: "/src/assets/clients/fbo.png" },
-    { name: "Zoho", logo: "/src/assets/clients/zoho.png" },
-    { name: "QuickBooks", logo: "/src/assets/clients/qbo.jpg" },
+    { name: "Xero", logo: "/src/assets/clients/xero.webp" },
+    { name: "FreshBooks", logo: "/src/assets/clients/fbo.webp" },
+    { name: "Zoho", logo: "/src/assets/clients/zoho.webp" },
+    { name: "QuickBooks", logo: "/src/assets/clients/qbo.webp" },
   ];
 
   return (
@@ -43,7 +43,7 @@ const QuickBooksEcosystem = () => {
           </motion.p>
 
           <motion.img
-            src="/assets/quickbooks.png"
+            src="/assets/quickbooks.webp"
             alt="QuickBooks Ecosystem"
             className="mx-auto w-full max-w-4xl rounded-xl shadow-lg"
             initial={{ opacity: 0, scale: 0.9 }}

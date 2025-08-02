@@ -7,7 +7,7 @@ import features from '../data/features';
 const FeatureGrid = () => {
   return (
     <section className="pt-28 pb-16 px-4 bg-white">
-      <div className="max-w-7xl mx-auto text-center mb-16">
+      <div className="max-w-7xl mx-auto text-center mb-5">
         <motion.h2
           className="text-4xl md:text-5xl font-extrabold text-blue-900"
           initial={{ opacity: 0, y: 20 }}

@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import heroImage from "../assets/bg.jpg";
+import heroImage from "../assets/bg.webp";
 
 type HeroSectionProps = {
   title: string;
