@@ -29,3 +29,8 @@ a {
 .btn-primary {
   @apply px-4 py-2 rounded-md bg-primary text-white font-medium hover:bg-blue-700 transition;
 }
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/MyFont.woff2') format('woff2');
+  font-display: swap;
+}
