@@ -1,3 +1,5 @@
+/* index.css */
+
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
@@ -5,12 +7,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.will-change-transform {
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
 
 /* Custom Base Styles using Tailwind utilities */
 body {
@@ -29,6 +25,7 @@ a {
 .btn-primary {
   @apply px-4 py-2 rounded-md bg-primary text-white font-medium hover:bg-blue-700 transition;
 }
+
 @font-face {
   font-family: 'MyFont';
   src: url('/fonts/MyFont.woff2') format('woff2');

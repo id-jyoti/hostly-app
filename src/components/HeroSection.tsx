@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import heroImage from "../assets/bg.webp";
+import heroImage from "/public/assets/bg.webp";
 import { Helmet } from "react-helmet-async";
 
 type HeroSectionProps = {
@@ -27,28 +27,40 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <>
       <Helmet>
-        <link rel="preload" href="/src/assets/bg.webp" as="image" />
+        {/* Preload hero image */}
+        <link rel="preload" as="image" href={heroImage} />
+        {/* Meta optimization */}
+        <title>{title}</title>
+        <meta name="description" content={subtitle} />
       </Helmet>
 
       <section className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 overflow-hidden">
-        {/* Background Image Overlay */}
+        {/* Background Image */}
         <div className="absolute inset-0 z-0 bg-black/30">
           <img
             src={heroImage}
-            alt="Hero background"
+            alt="Cloud-hosted QuickBooks environment"
+            loading="eager"
+            decoding="async"
+            // @ts-ignore
+            fetchpriority="high"
+            width="1920"
+            height="1080"
             className="w-full h-full object-cover object-center"
           />
         </div>
 
-        {/* Main Content */}
+        {/* Content */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center will-change-transform"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
-            Effortless <span className="text-pink-600">QuickBooks Hosting</span>
+            Effortless{" "}
+            <span className="text-pink-600">QuickBooks Hosting</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-900 max-w-2xl mx-auto leading-relaxed mb-10">

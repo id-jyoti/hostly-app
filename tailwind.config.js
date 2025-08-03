@@ -1,3 +1,4 @@
+// tailwind.config.js
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
@@ -5,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans,],
+        sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: '#2563eb',
@@ -14,15 +15,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    function ({ addUtilities }) {
-      addUtilities({
-        '.will-change-transform': {
-          willChange: 'transform, opacity',
-          backfaceVisibility: 'hidden',
-          transformStyle: 'preserve-3d',
-        },
-      });
-    },
-  ],
+  plugins: [], // Removed duplicate will-change utility
 };

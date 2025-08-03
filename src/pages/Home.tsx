@@ -19,7 +19,7 @@ const Home = () => {
           content="Hostly offers secure, scalable, and always-available QuickBooks hosting for businesses of all sizes."
         />
         {/* Preload hero image */}
-        <link rel="preload" as="image" href="/src/assets/bg.webp" />
+        <link rel="preload" as="image" href="/public/assets/bg.webp" />
       </Helmet>
 
       <main className="overflow-x-hidden">

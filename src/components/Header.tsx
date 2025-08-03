@@ -26,7 +26,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src="/src/assets/logo.webp" alt="Logo" className="h-10 w-auto object-contain" />
+          <img src="/public/assets/logo.webp" alt="Logo" className="h-10 w-auto object-contain" />
         </Link>
 
         {/* Mobile toggle */}

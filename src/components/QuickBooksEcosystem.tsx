@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const QuickBooksEcosystem = () => {
   const integrations = [
-    { name: "Xero", logo: "/src/assets/clients/xero.webp" },
-    { name: "FreshBooks", logo: "/src/assets/clients/fbo.webp" },
-    { name: "Zoho", logo: "/src/assets/clients/zoho.webp" },
-    { name: "QuickBooks", logo: "/src/assets/clients/qbo.webp" },
+    { name: "Xero", logo: "/public/assets/xero.webp" },
+    { name: "FreshBooks", logo: "/public/assets/fbo.webp" },
+    { name: "Zoho", logo: "/public/assets/zoho.webp" },
+    { name: "QuickBooks", logo: "/public/assets/qbo.webp" },
   ];
 
   return (
