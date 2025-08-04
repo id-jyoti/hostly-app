@@ -34,16 +34,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <section className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 bg-black/30">
-          <img
-            src="/assets/bg.webp" // ✅ From public folder
-            alt="Cloud-hosted QuickBooks environment"
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-            width="1920"
-            height="1080"
-            className="w-full h-full object-cover object-center"
-          />
+      
+        <img
+        src="/assets/bg.webp"
+        alt="Hero Background"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+        width="100%"
+        height="auto"
+        className="w-full h-auto object-cover"
+        />
         </div>
 
         {/* Content */}
