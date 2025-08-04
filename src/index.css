@@ -1,6 +1,6 @@
 /* index.css */
 
-/* Import Google Font */
+/* Remove or comment this if not using DM Sans */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 /* Tailwind Directives */
@@ -10,7 +10,7 @@
 
 /* Custom Base Styles using Tailwind utilities */
 body {
-  @apply font-serif text-gray-800 bg-white leading-relaxed antialiased;
+  @apply font-sans text-gray-800 bg-white leading-relaxed antialiased;
 }
 
 /* Typography */
@@ -26,6 +26,7 @@ a {
   @apply px-4 py-2 rounded-md bg-primary text-white font-medium hover:bg-blue-700 transition;
 }
 
+/* Optional: Local font definition, currently unused */
 @font-face {
   font-family: 'MyFont';
   src: url('/fonts/MyFont.woff2') format('woff2');

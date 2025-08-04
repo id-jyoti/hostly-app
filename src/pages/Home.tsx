@@ -1,13 +1,13 @@
 // src/pages/Home.tsx
-import React, { Suspense, lazy } from 'react';
-import { Helmet } from 'react-helmet-async';
-import HeroSection from '../components/HeroSection';
-import QuickBooksEcosystem from '../components/QuickBooksEcosystem';
+import React, { Suspense, lazy } from "react";
+import { Helmet } from "react-helmet-async";
+import HeroSection from "../components/HeroSection";
+import QuickBooksEcosystem from "../components/QuickBooksEcosystem";
 
 // Lazy-loaded components
-const FeatureGrid = lazy(() => import('../components/FeatureGrid'));
-const Testimonials = lazy(() => import('../components/Testimonials'));
-const CTASection = lazy(() => import('../components/CTASection'));
+const FeatureGrid = lazy(() => import("../components/FeatureGrid"));
+const Testimonials = lazy(() => import("../components/Testimonials"));
+const CTASection = lazy(() => import("../components/CTASection"));
 
 const Home = () => {
   return (
@@ -18,8 +18,7 @@ const Home = () => {
           name="description"
           content="Hostly offers secure, scalable, and always-available QuickBooks hosting for businesses of all sizes."
         />
-        {/* Preload hero image */}
-        <link rel="preload" as="image" href="/public/assets/bg.webp" />
+        {/* ❌ Removed image preload — handled in index.html only */}
       </Helmet>
 
       <main className="overflow-x-hidden">

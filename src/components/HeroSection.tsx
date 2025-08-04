@@ -2,7 +2,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import heroImage from "/public/assets/bg.webp";
 import { Helmet } from "react-helmet-async";
 
 type HeroSectionProps = {
@@ -27,8 +26,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <>
       <Helmet>
-        {/* Preload hero image */}
-        <link rel="preload" as="image" href={heroImage} />
         {/* Meta optimization */}
         <title>{title}</title>
         <meta name="description" content={subtitle} />
@@ -38,12 +35,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Background Image */}
         <div className="absolute inset-0 z-0 bg-black/30">
           <img
-            src={heroImage}
+            src="/assets/bg.webp" // ✅ From public folder
             alt="Cloud-hosted QuickBooks environment"
             loading="eager"
             decoding="async"
-            // @ts-ignore
-            fetchpriority="high"
+            fetchPriority="high"
             width="1920"
             height="1080"
             className="w-full h-full object-cover object-center"
@@ -59,8 +55,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center will-change-transform"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
-            Effortless{" "}
-            <span className="text-pink-600">QuickBooks Hosting</span>
+            Effortless <span className="text-pink-600">QuickBooks Hosting</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-900 max-w-2xl mx-auto leading-relaxed mb-10">
