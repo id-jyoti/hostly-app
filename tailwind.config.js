@@ -6,14 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          '"DM Sans"',
-          '"Inter"',
-          '"Segoe UI"',
-          '"Helvetica Neue"',
-          'Arial',
-          ...defaultTheme.fontFamily.sans,
-        ],
+        sans: ['Arial', ...defaultTheme.fontFamily.sans], // now starts with Arial
       },
       colors: {
         primary: '#2563eb',
